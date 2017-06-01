@@ -5,6 +5,8 @@
  */
 package visao;
 
+import controle.ConexaoBD;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 /**
@@ -52,6 +54,11 @@ public class TelaLogin extends javax.swing.JFrame {
         jToggleButtonAcessar.setBounds(360, 220, 80, 23);
 
         jButtonSair.setText("Sair");
+        jButtonSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSairActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonSair);
         jButtonSair.setBounds(270, 220, 80, 23);
 
@@ -93,14 +100,26 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButtonAcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonAcessarActionPerformed
-    TelaPrincipal tela = new TelaPrincipal();
-    tela.setVisible(true);
-    dispose();
+    
+        if(jTextFieldUsuario.getText().equals("") && jPasswordFieldSenha.getText().equals("")){
+            
+            TelaPrincipal tela = new TelaPrincipal();
+            tela.setVisible(true);
+            dispose();
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Usuário ou senha  inválido");
+        }
+        
+    
     }//GEN-LAST:event_jToggleButtonAcessarActionPerformed
 
     private void jPasswordFieldSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordFieldSenhaActionPerformed
+
+    private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButtonSairActionPerformed
 
     /**
      * @param args the command line arguments

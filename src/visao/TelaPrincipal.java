@@ -5,6 +5,8 @@
  */
 package visao;
 
+import controle.ConexaoBD;
+
 /**
  *
  * @author Fabricio
@@ -27,6 +29,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jInternalFrameBoasVindas = new javax.swing.JInternalFrame();
+        jButtonFecharBoasVindas = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jButtonCadMedico = new javax.swing.JButton();
+        jButtonCadEnfermeira = new javax.swing.JButton();
+        jButtonAgenda = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jButtonCadPaciente = new javax.swing.JButton();
+        jLabelPainelFundo = new javax.swing.JLabel();
         jLabelFundoPrincipal = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadastros = new javax.swing.JMenu();
@@ -38,9 +50,87 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuFerramentas = new javax.swing.JMenu();
         jMenuItemBoasVindas = new javax.swing.JMenuItem();
         jMenuSair = new javax.swing.JMenu();
+        jMenuItemSair = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
+
+        jInternalFrameBoasVindas.setTitle("Bem Vindo");
+        jInternalFrameBoasVindas.setVisible(true);
+        jInternalFrameBoasVindas.getContentPane().setLayout(null);
+
+        jButtonFecharBoasVindas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/exit.png"))); // NOI18N
+        jButtonFecharBoasVindas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonFecharBoasVindasActionPerformed(evt);
+            }
+        });
+        jInternalFrameBoasVindas.getContentPane().add(jButtonFecharBoasVindas);
+        jButtonFecharBoasVindas.setBounds(703, 0, 50, 50);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.setLayout(null);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setText("Agenda");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(10, 130, 70, 20);
+
+        jButtonCadMedico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/CadMedicos.png"))); // NOI18N
+        jButtonCadMedico.setText("Médico");
+        jButtonCadMedico.setToolTipText("Cadastrar médico");
+        jButtonCadMedico.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonCadMedico.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jButtonCadMedico.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonCadMedico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCadMedicoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonCadMedico);
+        jButtonCadMedico.setBounds(110, 30, 90, 80);
+
+        jButtonCadEnfermeira.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon-infermeira.png"))); // NOI18N
+        jButtonCadEnfermeira.setText("Enfermeira");
+        jButtonCadEnfermeira.setToolTipText("Cadastrar enfermeira");
+        jButtonCadEnfermeira.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonCadEnfermeira.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jButtonCadEnfermeira.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(jButtonCadEnfermeira);
+        jButtonCadEnfermeira.setBounds(210, 30, 90, 80);
+
+        jButtonAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Agenda.png"))); // NOI18N
+        jButtonAgenda.setText("Agenda");
+        jButtonAgenda.setToolTipText("Agenda");
+        jButtonAgenda.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonAgenda.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jButtonAgenda.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(jButtonAgenda);
+        jButtonAgenda.setBounds(10, 170, 90, 80);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setText("Cadastros");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(10, 0, 80, 20);
+
+        jButtonCadPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadPacientes.png"))); // NOI18N
+        jButtonCadPaciente.setText("Paciente");
+        jButtonCadPaciente.setToolTipText("Cadastrar paciente");
+        jButtonCadPaciente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonCadPaciente.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jButtonCadPaciente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(jButtonCadPaciente);
+        jButtonCadPaciente.setBounds(10, 30, 90, 80);
+
+        jLabelPainelFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/internalframe.png"))); // NOI18N
+        jPanel1.add(jLabelPainelFundo);
+        jLabelPainelFundo.setBounds(-120, -210, 1247, 625);
+
+        jInternalFrameBoasVindas.getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 40, 750, 310);
+
+        getContentPane().add(jInternalFrameBoasVindas);
+        jInternalFrameBoasVindas.setBounds(0, 0, 770, 380);
 
         jLabelFundoPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fundo_telaprincipal.jpg"))); // NOI18N
         getContentPane().add(jLabelFundoPrincipal);
@@ -49,6 +139,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuCadastros.setText("Cadastros");
 
         jMenuItemCadMedico.setText("Médicos");
+        jMenuItemCadMedico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCadMedicoActionPerformed(evt);
+            }
+        });
         jMenuCadastros.add(jMenuItemCadMedico);
 
         jMenuItemCadPaciente.setText("Pacientes");
@@ -73,11 +168,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuFerramentas.setText("Ferramentas");
 
         jMenuItemBoasVindas.setText("Tela de Boas-Vindas");
+        jMenuItemBoasVindas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemBoasVindasActionPerformed(evt);
+            }
+        });
         jMenuFerramentas.add(jMenuItemBoasVindas);
 
         jMenuBar1.add(jMenuFerramentas);
 
         jMenuSair.setText("Sair");
+
+        jMenuItemSair.setText("Sair");
+        jMenuItemSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemSairActionPerformed(evt);
+            }
+        });
+        jMenuSair.add(jMenuItemSair);
+
         jMenuBar1.add(jMenuSair);
 
         setJMenuBar(jMenuBar1);
@@ -89,6 +198,31 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void jMenuItemCadUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItemCadUsuarioActionPerformed
+
+    private void jButtonFecharBoasVindasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFecharBoasVindasActionPerformed
+        jInternalFrameBoasVindas.dispose();
+    }//GEN-LAST:event_jButtonFecharBoasVindasActionPerformed
+
+    private void jMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairActionPerformed
+       System.exit(0);
+    }//GEN-LAST:event_jMenuItemSairActionPerformed
+
+    private void jMenuItemBoasVindasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBoasVindasActionPerformed
+            //TelaPrincipal telaPrincipal = new TelaPrincipal();
+            //telaPrincipal.setVisible(true);
+            //dispose();
+            jInternalFrameBoasVindas.setVisible(true);
+    }//GEN-LAST:event_jMenuItemBoasVindasActionPerformed
+
+    private void jMenuItemCadMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadMedicoActionPerformed
+        TelaCadMedico telaCadMedico = new TelaCadMedico();
+        telaCadMedico.setVisible(true);
+    }//GEN-LAST:event_jMenuItemCadMedicoActionPerformed
+
+    private void jButtonCadMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadMedicoActionPerformed
+        TelaCadMedico telaCadMedico = new TelaCadMedico();
+        telaCadMedico.setVisible(true);
+    }//GEN-LAST:event_jButtonCadMedicoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,17 +250,28 @@ public class TelaPrincipal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TelaPrincipal().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonAgenda;
+    private javax.swing.JButton jButtonCadEnfermeira;
+    private javax.swing.JButton jButtonCadMedico;
+    private javax.swing.JButton jButtonCadPaciente;
+    private javax.swing.JButton jButtonFecharBoasVindas;
+    private javax.swing.JInternalFrame jInternalFrameBoasVindas;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelFundoPrincipal;
+    private javax.swing.JLabel jLabelPainelFundo;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadastros;
     private javax.swing.JMenu jMenuFerramentas;
@@ -135,7 +280,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemCadMedico;
     private javax.swing.JMenuItem jMenuItemCadPaciente;
     private javax.swing.JMenuItem jMenuItemCadUsuario;
+    private javax.swing.JMenuItem jMenuItemSair;
     private javax.swing.JMenu jMenuRelatorios;
     private javax.swing.JMenu jMenuSair;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
